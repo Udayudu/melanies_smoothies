@@ -1,6 +1,6 @@
 # Import python packages
 import streamlit as st
-from snowflake.snowpark.context import get_active_session
+#from snowflake.snowpark.context import get_active_session --To connect the app directly from Streamlit we are commenting this as this will work in snowflake streamlit app.
 from snowflake.snowpark.functions import col
 
 # Write directly to the app
