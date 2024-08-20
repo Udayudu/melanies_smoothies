@@ -17,9 +17,9 @@ st.write('The name on your Smoothie will be:', name_on_order)
 cnx = st.connection("snowflake") #Adding this line for SniS
 session = cnx.session() # Adding this line for SniS
 #session = get_active_session() -- commenting this line for snis as this works when the 3 line in this file is enabled and after disabling line 16 and 17 of this file.
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
-#st.dataframe(data=my_dataframe, use_container_width=True)
-
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
+st.dataframe(data=my_dataframe, use_container_width=True)
+st.stop()
 ingredients_list = st.multiselect(
     'Choose up to 5 ingredients: '
     , my_dataframe
